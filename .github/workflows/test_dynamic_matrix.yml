@@ -23,9 +23,12 @@ jobs:
         id: set-matrix
         run: |
           jq . matrix.json
-          cat matrix.json > $GITHUB_OUTPUT
+          matrix=$(cat matrix.json)
+          echo "$matrix" > $GITHUB_OUTPUT
 
   display-matrix:
+
+    needs: [generate-matrix]
 
     runs-on: ubuntu-latest
 
