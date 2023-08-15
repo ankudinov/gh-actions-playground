@@ -1,0 +1,37 @@
+name: dynamic matrix
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  generate-matrix:
+
+    runs-on: ubuntu-latest
+
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+
+      - name: Calculate build matrix
+        run: |
+          echo -e "one\ntwo\nthree" | jq -R . | jq -s '{"arr": .}' > matrix.json
+
+      - name: Set matrix output
+        id: set-matrix
+        run: |
+          jq . matrix.json
+          matrix=$(cat matrix.json)
+          echo "::set-output name=matrix::$matrix"
+
+  display-matrix:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: display matrix content
+        run: |
+          echo "${{ steps.set-matrix.outputs.matrix }}"
