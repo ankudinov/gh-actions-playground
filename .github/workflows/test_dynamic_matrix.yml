@@ -23,8 +23,7 @@ jobs:
         id: set-matrix
         run: |
           jq . matrix.json
-          matrix=$(cat matrix.json)
-          echo "::set-output name=matrix::$matrix"
+          cat matrix.json > $GITHUB_OUTPUT
 
   display-matrix:
 
@@ -34,4 +33,4 @@ jobs:
 
       - name: display matrix content
         run: |
-          echo "${{ steps.set-matrix.outputs.matrix }}"
+          echo "$GITHUB_OUTPUT"
