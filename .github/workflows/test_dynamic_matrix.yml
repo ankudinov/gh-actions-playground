@@ -23,8 +23,7 @@ jobs:
         id: set-matrix
         run: |
           jq . matrix.json
-          matrix=$(cat matrix.json)
-          echo "$matrix" > $GITHUB_OUTPUT
+          GITHUB_OUTPUT="$(jq -r '.environment' "properties.json")"
 
   display-matrix:
 
