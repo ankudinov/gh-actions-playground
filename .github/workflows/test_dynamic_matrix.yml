@@ -11,8 +11,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    # outputs:
+    #   matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
 
       - name: Calculate build matrix
@@ -20,7 +20,7 @@ jobs:
           echo -e "one\ntwo\nthree" | jq -R . | jq -s '{"arr": .}' > matrix.json
 
       - name: Set matrix output
-        id: set-matrix
+        # id: set-matrix
         # run: |
         #   jq . matrix.json
         #   echo "$(jq -r '.' "matrix.json")" >> "$GITHUB_OUTPUT"
@@ -47,4 +47,4 @@ jobs:
 
       - name: display matrix content
         run: |
-          echo "${{ needs.generate-matrix.outputs }}"
+          echo "${{ generate-matrix.outputs }}"
