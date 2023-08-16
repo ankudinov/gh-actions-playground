@@ -50,4 +50,4 @@ jobs:
 
       - name: display matrix content
         run: |
-          echo "${{ needs.generate-matrix.outputs.matrix }}"
+          echo "${{ jobs.generate-matrix.outputs.matrix }}"
