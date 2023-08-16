@@ -31,14 +31,18 @@ jobs:
             echo EOF
           } >> "$GITHUB_OUTPUT"
 
-  display-matrix:
-
-    needs: [generate-matrix]
-
-    runs-on: ubuntu-latest
-
-    steps:
-
       - name: display matrix content
         run: |
           echo "$GITHUB_OUTPUT"
+
+  # display-matrix:
+
+  #   needs: [generate-matrix]
+
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+
+  #     - name: display matrix content
+  #       run: |
+  #         echo "$GITHUB_OUTPUT"
