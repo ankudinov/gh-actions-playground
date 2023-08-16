@@ -25,14 +25,14 @@ jobs:
         # run: |
         #   jq . matrix.json
         #   echo "$(jq -r '.' "matrix.json")" >> "$GITHUB_OUTPUT"
-        # run: |
-        #   echo "test='abc123'" >> $GITHUB_OUTPUT
         run: |
-          {
-            echo 'GITHUB_OUTPUT<<EOF'
-            echo "$(jq -r '.' "matrix.json")"
-            echo EOF
-          } >> "$GITHUB_ENV"
+          echo "test='abc123'" >> $GITHUB_OUTPUT
+        # run: |
+        #   {
+        #     echo 'GITHUB_OUTPUT<<EOF'
+        #     echo "$(jq -r '.' "matrix.json")"
+        #     echo EOF
+        #   } >> "$GITHUB_ENV"
 
       - name: display matrix content
         run: |
