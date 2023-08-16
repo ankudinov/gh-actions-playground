@@ -31,11 +31,11 @@ jobs:
             echo EOF
           } >> "$GITHUB_ENV"
 
-      # - name: display matrix content
-      #   run: |
-      #     echo "$GITHUB_OUTPUT"
-      #     echo "${{ github.repository }}"
-      #     echo "${{ github.repository_owner }}"
+      - name: display matrix content
+        run: |
+          echo "${{ steps.generate-matrix.outputs }}"
+          echo "${{ github.repository }}"
+          echo "${{ github.repository_owner }}"
 
   display-matrix:
 
