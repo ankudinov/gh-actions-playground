@@ -13,7 +13,7 @@ jobs:
 
     outputs:
       # matrix: ${{ steps.set-matrix.outputs.matrix }}
-      matrix: "${{ steps.set-matrix.outputs.arr }}"
+      matrix: "${{ steps.set-matrix.outputs.test }}"
     steps:
 
       - name: Calculate build matrix
