@@ -47,4 +47,4 @@ jobs:
 
       - name: display matrix content
         run: |
-          echo "${{ job.generate-matrix }}"
+          echo "${{ needs.generate-matrix }}"
