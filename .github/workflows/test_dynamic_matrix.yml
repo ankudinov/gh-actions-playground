@@ -47,4 +47,4 @@ jobs:
 
       - name: display matrix content
         run: |
-          echo "${{ generate-matrix.outputs }}"
+          echo "${{ jobs.generate-matrix.outputs }}"
