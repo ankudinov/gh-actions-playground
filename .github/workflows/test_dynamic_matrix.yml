@@ -28,7 +28,6 @@ jobs:
       - name: test json
         id: test-json
         run: |
-          jq . matrix.json
           {
             echo 'GITHUB_OUTPUT<<EOF'
             echo "$(jq -r '.' "matrix.json")"
