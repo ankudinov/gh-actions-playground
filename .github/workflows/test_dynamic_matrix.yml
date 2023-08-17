@@ -74,4 +74,4 @@ jobs:
         run: |
           echo "${{ needs.generate-matrix.outputs.matrix }}"
           echo "${{ needs.generate-matrix.outputs.ansible_core_version }}"
-          echo "$A_JSON"
+          echo "${{ env.A_JSON }}"
