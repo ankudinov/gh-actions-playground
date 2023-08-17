@@ -17,6 +17,9 @@ jobs:
       # ansible_core_version: "${{ steps.set-matrix.outputs.ansible_core_version }}"
     steps:
 
+      - name: Checkout code ✅
+        uses: actions/checkout@v3
+
       - name: Calculate build matrix
         run: |
           echo -e "one\ntwo\nthree" | jq -R . | jq -s '{"arr": .}' > matrix.json
