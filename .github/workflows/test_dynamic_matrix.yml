@@ -15,7 +15,7 @@ jobs:
       # matrix: ${{ steps.set-matrix.outputs.matrix }}
       matrix: "${{ steps.set-matrix.outputs.test }}"
       ansible_core_version: "${{ steps.find-ansible-core-version.outputs.ansible_core_version }}"
-      a_json: "${{ steps.test-json.outputs.a_json }}"
+      a_json: "${{ steps.test-json.outputs }}"
     steps:
 
       - name: Checkout code ✅
@@ -29,8 +29,11 @@ jobs:
         id: test-json
         run: |
           jq . matrix.json
-          SOME_JSON=$(jq -r '.' "matrix.json")
-          echo "a_json=$SOME_JSON" >> $GITHUB_OUTPUT
+          {
+            echo 'GITHUB_OUTPUT<<EOF'
+            echo "$(jq -r '.' "matrix.json")"
+            echo EOF
+          } >> "$GITHUB_ENV"
 
       - name: Set matrix output
         id: set-matrix
