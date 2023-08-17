@@ -40,9 +40,10 @@ jobs:
             echo 'A_JSON<<EOF'
             echo "$(jq -r '.' "matrix.json")"
             echo EOF
-          } >> "$GITHUB_ENV"
+          } >> "$GITHUB_OUTPUT"
       - name: echo env
-        run: echo "${{ env.A_JSON }}"
+        # run: echo "${{ env.A_JSON }}"
+        run: echo "${{ steps.test-json.outputs.A_JSON }}"
 
       - name: Set matrix output
         id: set-matrix
