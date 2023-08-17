@@ -39,4 +39,4 @@ jobs:
 
       - name: display outputs
         run: |
-          echo "${{ needs.generate-matrix.outputs.ansible_core_version }}"
+          echo "${{ needs.generate-build-args.outputs.ansible_core_version }}"
