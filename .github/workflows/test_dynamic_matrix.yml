@@ -21,6 +21,14 @@ jobs:
       - name: Checkout code ✅
         uses: actions/checkout@v3
 
+      - name: test Markdown
+        run: |
+          echo "# Testing Markdown in GH actions" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> **WARNING**: this is just a test" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "end of the test" >> $GITHUB_STEP_SUMMARY
+
       - name: Calculate build matrix
         run: |
           echo -e "one\ntwo\nthree" | jq -R . | jq -s '{"arr": .}' > matrix.json
