@@ -56,6 +56,6 @@ jobs:
       - name: Smoke test containers 🚬
         run: |
           echo "Smoke testing containers. Be patient. 🐢"
-          docker run --rm -it ghcr.io/ankudinov/avd-devcontainer/base:latest python --version
-          docker run --rm -it ghcr.io/ankudinov/avd-devcontainer/base:latest python --version
-          docker run --rm -it ghcr.io/ankudinov/avd-devcontainer/base:latest python --version
+          docker run --rm ghcr.io/ankudinov/avd-devcontainer/base:latest python --version
+          docker run --rm ghcr.io/ankudinov/avd-devcontainer/base:latest python --version
+          docker run --rm ghcr.io/ankudinov/avd-devcontainer/base:latest python --version
