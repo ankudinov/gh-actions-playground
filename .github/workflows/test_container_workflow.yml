@@ -40,3 +40,22 @@ jobs:
       - name: display outputs
         run: |
           echo "${{ needs.generate-build-args.outputs.ansible_core_version }}"
+
+  container_smoke_tests:
+
+    # needs: [build_all_containers]
+    needs: [generate-build-args]
+
+    runs-on: ubuntu-22.04
+
+    steps:
+
+      - name: Checkout code ✅
+        uses: actions/checkout@v3
+
+      - name: Smoke test containers 🚬
+        run: |
+          echo "Smoke testing containers. Be patient. 🐢"
+          docker run --rm -it ghcr.io/ankudinov/avd-devcontainer/base:latest python --version
+          docker run --rm -it ghcr.io/ankudinov/avd-devcontainer/base:latest python --version
+          docker run --rm -it ghcr.io/ankudinov/avd-devcontainer/base:latest python --version
