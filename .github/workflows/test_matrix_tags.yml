@@ -19,13 +19,9 @@ jobs:
       matrix:
         container: [base]
         python_version: ["3.9", "3.10", "3.11"]
-        include:
-          - python_version: ["3.9", "3.10"]
-            container_tags: ${{ matrix.python_version }}
-          - python_version: "3.11"
-            container_tags: ${{ matrix.python_version }},latest
+    
     steps:
 
       - name: test
         run: |
-          echo "{{ matrix.container_tags }}"
+          echo "{{ env.GITHUB_REF_NAME }}"
