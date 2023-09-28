@@ -26,4 +26,4 @@ jobs:
 
       - name: test
         run: |
-          run: echo "python${{ matrix.python_version }},latest"
+          echo "python${{ matrix.python_version }},latest"
