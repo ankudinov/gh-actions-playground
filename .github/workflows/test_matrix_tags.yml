@@ -24,4 +24,4 @@ jobs:
 
       - name: test
         run: |
-          echo "{{ env.GITHUB_REF_NAME }}"
+          echo "${{ env.GITHUB_REF_NAME }}"
