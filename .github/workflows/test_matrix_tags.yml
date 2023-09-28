@@ -19,11 +19,12 @@ jobs:
       matrix:
         container: [base]
         python_version: ["3.9", "3.10", "3.11"]
+        container_tags: ${{ matrix.python_version }}
         include:
           - python_version: "3.11"
-            container_tags: devel
+            container_tags: ${{ matrix.python_version }},latest
     steps:
 
       - name: test
         run: |
-          echo "python${{ matrix.python_version }},latest"
+          echo "{{ matrix.container_tags }}"
