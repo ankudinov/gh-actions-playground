@@ -1,0 +1,27 @@
+---
+name: build containers on every push to devel branch
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    branches:
+      - master
+
+jobs:
+
+  build_base:
+
+    runs-on: ubuntu-22.04
+
+    strategy:
+      matrix:
+        container: [base]
+        python_version: ["3.9", "3.10", "3.11"]
+        include:
+          - python_version: "3.11"
+            container_tags: devel
+
+    run: |
+      run: echo "python${{ matrix.python_version }},latest"
