@@ -22,6 +22,8 @@ jobs:
         include:
           - python_version: "3.11"
             container_tags: devel
+    steps:
 
-    run: |
-      run: echo "python${{ matrix.python_version }},latest"
+      - name: test
+        run: |
+          run: echo "python${{ matrix.python_version }},latest"
