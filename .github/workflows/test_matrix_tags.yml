@@ -19,8 +19,9 @@ jobs:
       matrix:
         container: [base]
         python_version: ["3.9", "3.10", "3.11"]
-        container_tags: ${{ matrix.python_version }}
         include:
+          - python_version: ["3.9", "3.10"]
+            container_tags: ${{ matrix.python_version }}
           - python_version: "3.11"
             container_tags: ${{ matrix.python_version }},latest
     steps:
