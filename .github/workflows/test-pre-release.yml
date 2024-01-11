@@ -1,0 +1,24 @@
+---
+name: build containers on every push to devel branch
+
+on:
+  release:
+    types: [published, prereleased]
+
+jobs:
+
+  build_base:
+
+    runs-on: ubuntu-22.04
+
+    strategy:
+      matrix:
+        container: [base]
+        python_version: ["3.9", "3.10", "3.11"]
+    
+    steps:
+
+      - name: test pre-release
+        run: |
+          echo "${{ github.ref_name }}"
+          echo "Pre-release worked!"
