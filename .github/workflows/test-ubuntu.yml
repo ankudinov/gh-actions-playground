@@ -1,0 +1,21 @@
+---
+name: test ubuntu env
+on:
+  workflow_dispatch:
+    branches:
+      - master
+
+jobs:
+  build_image:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Starting
+        run: echo "Starting... Be patient. 🐢"
+      - name: Checkout code ✅
+        uses: actions/checkout@v4
+      - name: Run CMDs
+        run: |
+          whoami
+          echo "test" > test.txt
+          echo "test2" > /root/test2.txt
+          ls -la
