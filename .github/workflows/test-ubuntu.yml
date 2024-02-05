@@ -17,3 +17,5 @@ jobs:
         run: |
           whoami
           echo "test" > test.txt
+          echo "test2" > /root/test2.txt
+          ls -la
