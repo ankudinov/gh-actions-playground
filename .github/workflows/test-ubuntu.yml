@@ -3,7 +3,7 @@ name: test ubuntu env
 on:
   workflow_dispatch:
     branches:
-      - test_ubuntu
+      - master
 
 jobs:
   build_image:
@@ -13,7 +13,7 @@ jobs:
         run: echo "Starting... Be patient. 🐢"
       - name: Checkout code ✅
         uses: actions/checkout@v4
-      - name: Build image tags 🏷️
-        id: build-tags
+      - name: Run CMDs
         run: |
           whoami
+          echo "test" > test.txt
