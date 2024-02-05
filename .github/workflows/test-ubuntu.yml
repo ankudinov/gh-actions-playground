@@ -16,6 +16,9 @@ jobs:
       - name: Run CMDs
         run: |
           whoami
+          id -u
+          id -g
+          echo ${HOME}
           echo "test" > test.txt
-          sudo echo "test2" > /root/test2.txt
+          # sudo echo "test2" > /root/test2.txt
           ls -la
