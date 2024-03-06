@@ -94,4 +94,4 @@ jobs:
             docker image ls
             pwd
             ls -la
-            find . -name "builder-*"
+            ls dev_containers_target_stage/
