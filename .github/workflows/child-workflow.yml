@@ -99,3 +99,6 @@ jobs:
           ls -la
           docker info
           sudo ls -la /var/lib/docker/
+          sudo ls -la /var/lib/docker/image/
+          sudo ls -la /var/lib/docker/overlay2/
+          sudo ls -la /var/lib/docker/tmp/ 
