@@ -88,4 +88,8 @@ jobs:
           imageName: ghcr.io/${{ github.repository }}/${{ inputs.container_name }}
           imageTag: ${{ inputs.image_tags }}
           platform: ${{ inputs.platform }}
-          push: always
+          push: never
+          runCmd: |
+            docker image ls
+            pwd
+            ls -la
