@@ -90,17 +90,20 @@ jobs:
           imageTag: ${{ inputs.image_tags }}
           platform: ${{ inputs.platform }}
           push: never
+          # runCmd: |
+          #   chmod +x test.sh
+          #   test.sh
           runCmd: |
-            chmod +x test.sh
-            test.sh
+            pwd
+            ls -la
 
-      - name: check env after build
-        run: |
-          pwd
-          ls -la
-          docker info
-          docker system df
-          sudo ls -la /var/lib/docker/
-          sudo ls -la /var/lib/docker/image/
-          sudo ls -la /var/lib/docker/overlay2/
-          sudo ls -la /var/lib/docker/tmp/
+      # - name: check env after build
+      #   run: |
+      #     pwd
+      #     ls -la
+      #     docker info
+      #     docker system df
+      #     sudo ls -la /var/lib/docker/
+      #     sudo ls -la /var/lib/docker/image/
+      #     sudo ls -la /var/lib/docker/overlay2/
+      #     sudo ls -la /var/lib/docker/tmp/
