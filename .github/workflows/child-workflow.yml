@@ -91,7 +91,4 @@ jobs:
           platform: ${{ inputs.platform }}
           push: never
           runCmd: |
-            docker image ls
-            pwd
-            ls -la
-            ls dev_containers_target_stage/
+            containerlab version
