@@ -98,7 +98,8 @@ jobs:
           pwd
           ls -la
           docker info
+          docker system df
           sudo ls -la /var/lib/docker/
           sudo ls -la /var/lib/docker/image/
           sudo ls -la /var/lib/docker/overlay2/
-          sudo ls -la /var/lib/docker/tmp/ 
+          sudo ls -la /var/lib/docker/tmp/
