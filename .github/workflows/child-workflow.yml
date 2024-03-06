@@ -92,12 +92,11 @@ jobs:
           push: never
           runCmd: |
             containerlab version
-            if [ -z "$(docker version | grep 'version: 0.51.3')" ]; then exit 1; fi
-            if [ -z "$(docker version | grep 'version: 0.51.4')" ]; then exit 1; fi
+            if [ -z "$(containerlab version | grep 'version: 0.51.3')" ]; then exit 1; fi
+            if [ -z "$(containerlab version | grep 'version: 0.51.4')" ]; then exit 1; fi
 
       - name: check env after build
         run: |
-          docker buildx build --load
           pwd
           ls -la
           docker info
