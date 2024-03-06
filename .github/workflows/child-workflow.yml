@@ -84,6 +84,7 @@ jobs:
           AVD_GITHUB_REPO: ${{ inputs.avd_github_repo }}
           AVD_BRANCH_NAME: ${{ inputs.avd_branch_name }}
         with:
+          cacheFrom: ghcr.io/${{ github.repository }}/${{ inputs.container_name }}
           subFolder: containers/${{ inputs.container_name }}
           imageName: ghcr.io/${{ github.repository }}/${{ inputs.container_name }}
           imageTag: ${{ inputs.image_tags }}
@@ -93,3 +94,4 @@ jobs:
             docker image ls
             pwd
             ls -la
+            find . -name "builder-*"
