@@ -90,10 +90,9 @@ jobs:
           imageTag: ${{ inputs.image_tags }}
           platform: ${{ inputs.platform }}
           push: never
-          # runCmd: |
-          #   chmod +x test.sh
-          #   test.sh
           runCmd: |
+            chmod +x test.sh
+            test.sh
             pwd
             ls -la
 
