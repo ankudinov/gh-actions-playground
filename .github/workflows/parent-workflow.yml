@@ -14,15 +14,8 @@ jobs:
     uses: ./.github/workflows/child-workflow.yml
     strategy:
       matrix:
-        container_name: [golang-jupyter, my_avd, marpit]
+        container_name: [my_avd]
         include:
-          - container_name: golang-jupyter
-            from_image: janpfeifer/gonb_jupyterlab
-            from_variant: latest
-          - container_name: marpit
-            from_image: mcr.microsoft.com/devcontainers/base
-            from_variant: debian
-            platform: linux/amd64
           - container_name: my_avd
             from_image: ghcr.io/aristanetworks/avd/dev
             from_variant: python3.11
