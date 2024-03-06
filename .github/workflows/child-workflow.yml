@@ -91,6 +91,7 @@ jobs:
           platform: ${{ inputs.platform }}
           push: never
           runCmd: |
+            printenv
             chmod +x test.sh
             ./test.sh
 
