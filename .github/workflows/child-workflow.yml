@@ -98,3 +98,4 @@ jobs:
           pwd
           ls -la
           docker info
+          ls -la /var/lib/docker/
