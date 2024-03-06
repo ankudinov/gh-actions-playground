@@ -92,9 +92,7 @@ jobs:
           push: never
           runCmd: |
             chmod +x test.sh
-            test.sh
-            pwd
-            ls -la
+            ./test.sh
 
       # - name: check env after build
       #   run: |
