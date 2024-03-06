@@ -95,6 +95,7 @@ jobs:
 
       - name: check env after build
         run: |
+          docker buildx build --load
           pwd
           ls -la
           docker info
