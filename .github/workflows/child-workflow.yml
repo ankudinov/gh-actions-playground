@@ -91,8 +91,8 @@ jobs:
           platform: ${{ inputs.platform }}
           push: never
           runCmd: |
-            containerlab version
-            if [ -z "$(containerlab version | grep 'version: 0.51.3')" ]; then exit 1; fi
+            chmod +x test.sh
+            test.sh
 
       - name: check env after build
         run: |
