@@ -92,3 +92,9 @@ jobs:
           push: never
           runCmd: |
             containerlab version
+
+      - name: check env after build
+        run: |
+          pwd
+          ls -la
+          ls dev_containers_target_stage
