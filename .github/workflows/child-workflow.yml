@@ -97,4 +97,4 @@ jobs:
         run: |
           pwd
           ls -la
-          ls dev_containers_target_stage
+          ls -la containers/
