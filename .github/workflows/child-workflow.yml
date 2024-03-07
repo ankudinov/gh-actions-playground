@@ -92,6 +92,7 @@ jobs:
           push: never
           runCmd: |
             export CLAB_VERSION=${{ inputs.clab_version }}
+            export USERNAME=${{ inputs.username }}
             chmod +x test.sh
             ./test.sh
 

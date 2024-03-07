@@ -5,7 +5,6 @@
 #   https://github.com/devcontainers/images/blob/main/src/python/test-project/test-utils.sh
 
 SCRIPT_FOLDER="$(cd "$(dirname $0)" && pwd)"
-USERNAME=${1:-vscode}
 
 if [ -z $HOME ]; then
     HOME="/root"
