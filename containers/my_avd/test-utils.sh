@@ -128,11 +128,6 @@ checkCommon()
         apt-transport-https \
         dialog \
         gnupg2 \
-        libc6 \
-        libgcc1 \
-        libgssapi-krb5-2 \
-        liblttng-ust1 \
-        libstdc++6 \
         zlib1g \
         locales \
         sudo"
