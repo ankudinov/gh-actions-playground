@@ -92,6 +92,7 @@ jobs:
           push: never
           runCmd: |
             printenv
+            export CLAB_VERSION=${{ inputs.clab_version }}
             chmod +x test.sh
             ./test.sh
 
