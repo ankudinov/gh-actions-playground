@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: find-branch
         run: |
-          echo "test"
+          echo "${GITHUB_HEAD_REF}"
