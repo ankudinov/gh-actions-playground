@@ -1,0 +1,16 @@
+---
+name: build multiple containers at once
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - .github/workflows/find-branch.yml
+
+jobs:
+  build_some_containers:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: find-branch
+        run: |
+          echo "test"
