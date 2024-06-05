@@ -12,5 +12,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: find-branch
+        id: find_branch
         run: |
-          echo "${GITHUB_HEAD_REF}"
+          run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+
+      - name: echo
+        run: |
+          echo "${{ steps.find_branch.outputs.branch }}"
