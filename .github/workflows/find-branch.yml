@@ -22,7 +22,11 @@ jobs:
 
       - name: Convert Github repository name to lowercase ⬇️
         id: gh_repo
-        run: echo "name_lowcase=${GITHUB_REPOSITORY,,}" >> $GITHUB_OUTPUT
+        run: | 
+          echo "name_lowcase=${GITHUB_REPOSITORY,,}" >> $GITHUB_OUTPUT
+          echo "name_capital=${GITHUB_REPOSITORY^^}" >> $GITHUB_OUTPUT
 
       - name: echo lowcase repo name
-        run: echo "${{ steps.gh_repo.outputs.name_lowcase }}"
+        run: |
+          echo "${{ steps.gh_repo.outputs.name_lowcase }}"
+          echo "${{ steps.gh_repo.outputs.name_capital }}"
