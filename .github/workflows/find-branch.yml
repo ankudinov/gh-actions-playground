@@ -19,3 +19,10 @@ jobs:
       - name: echo
         run: |
           echo "${{ steps.find_branch.outputs.branch }}"
+
+      - name: Convert Github repository name to lowercase ⬇️
+        id: gh_repo
+        run: echo "name_lowcase=${GITHUB_REPOSITORY,,}" >> $GITHUB_OUTPUT
+
+      - name: echo lowcase repo name
+        run: echo "${{ steps.gh_repo.outputs.name_lowcase }}"
